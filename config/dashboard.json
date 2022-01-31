@@ -1,2705 +1,2463 @@
 {
-    "annotations": {
-      "list": [
-        {
-          "$$hashKey": "object:58",
-          "builtIn": 1,
-          "datasource": "-- Grafana --",
-          "enable": true,
-          "hide": true,
-          "iconColor": "rgba(0, 211, 255, 1)",
-          "name": "Annotations & Alerts",
+  "annotations": {
+    "list": [
+      {
+        "$$hashKey": "object:58",
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
           "type": "dashboard"
-        }
-      ]
-    },
-    "editable": true,
-    "gnetId": null,
-    "graphTooltip": 0,
-    "id": 1,
-    "iteration": 1629274388582,
-    "links": [],
-    "panels": [
-      {
-        "cacheTimeout": null,
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {
-            "links": [],
-            "mappings": [
-              {
-                "$$hashKey": "object:5332",
-                "id": 0,
-                "op": "=",
-                "text": "Down",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "from": "0",
-                "id": 1,
-                "operator": "",
-                "text": "Up",
-                "to": "1",
-                "type": 2,
-                "value": ""
-              }
-            ],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "none"
-          },
-          "overrides": []
         },
-        "gridPos": {
-          "h": 6,
-          "w": 4,
-          "x": 0,
-          "y": 0
-        },
-        "id": 40,
-        "links": [],
-        "options": {
-          "colorMode": "value",
-          "graphMode": "none",
-          "justifyMode": "auto",
-          "orientation": "horizontal",
-          "reduceOptions": {
-            "calcs": [
-              "last"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "text": {},
-          "textMode": "auto"
-        },
-        "pluginVersion": "7.5.2",
-        "targets": [
-          {
-            "expr": "neo4j_[[Database]]_causal_clustering_core_is_leader{instance=~\"core1:2004\"}",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          }
-        ],
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "Neo4j Status  - core1",
-        "type": "stat"
-      },
-      {
-        "cacheTimeout": null,
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {
-            "mappings": [
-              {
-                "$$hashKey": "object:5332",
-                "id": 0,
-                "op": "=",
-                "text": "Down",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "from": "0",
-                "id": 1,
-                "operator": "",
-                "text": "Up",
-                "to": "1",
-                "type": 2,
-                "value": ""
-              }
-            ],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "none"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 6,
-          "w": 4,
-          "x": 4,
-          "y": 0
-        },
-        "id": 41,
-        "links": [],
-        "options": {
-          "colorMode": "value",
-          "graphMode": "none",
-          "justifyMode": "auto",
-          "orientation": "horizontal",
-          "reduceOptions": {
-            "calcs": [
-              "last"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "text": {},
-          "textMode": "auto"
-        },
-        "pluginVersion": "7.5.2",
-        "targets": [
-          {
-            "expr": "neo4j_[[Database]]_causal_clustering_core_is_leader{instance=~\"core2:2004\"}",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          }
-        ],
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "Neo4j Status  - core2",
-        "type": "stat"
-      },
-      {
-        "cacheTimeout": null,
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {
-            "mappings": [
-              {
-                "$$hashKey": "object:5332",
-                "id": 0,
-                "op": "=",
-                "text": "Down",
-                "type": 1,
-                "value": "null"
-              },
-              {
-                "from": "0",
-                "id": 1,
-                "operator": "",
-                "text": "Up",
-                "to": "1",
-                "type": 2,
-                "value": ""
-              }
-            ],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            },
-            "unit": "none"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 6,
-          "w": 4,
-          "x": 8,
-          "y": 0
-        },
-        "id": 42,
-        "links": [],
-        "options": {
-          "colorMode": "value",
-          "graphMode": "none",
-          "justifyMode": "auto",
-          "orientation": "horizontal",
-          "reduceOptions": {
-            "calcs": [
-              "last"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "text": {},
-          "textMode": "auto"
-        },
-        "pluginVersion": "7.5.2",
-        "targets": [
-          {
-            "expr": "neo4j_[[Database]]_causal_clustering_core_is_leader{instance=~\"core3:2004\"}",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          }
-        ],
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "Neo4j Status  - core3",
-        "type": "stat"
-      },
-      {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorPostfix": false,
-        "colorPrefix": false,
-        "colorValue": true,
-        "colors": [
-          "#299c46",
-          "rgba(237, 129, 40, 0.89)",
-          "#d44a3a"
-        ],
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {},
-          "overrides": []
-        },
-        "format": "none",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
-        },
-        "gridPos": {
-          "h": 6,
-          "w": 4,
-          "x": 12,
-          "y": 0
-        },
-        "id": 38,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "$$hashKey": "object:5014",
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "$$hashKey": "object:5015",
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "pluginVersion": "6.7.3",
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "80%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false,
-          "ymax": null,
-          "ymin": null
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "expr": "up{instance=~\"core3:2004\"} ",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          }
-        ],
-        "thresholds": "",
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "VM Instance \"core3\" Status",
-        "type": "singlestat",
-        "valueFontSize": "200%",
-        "valueMaps": [
-          {
-            "$$hashKey": "object:5017",
-            "op": "=",
-            "text": "Online",
-            "value": "1"
-          }
-        ],
-        "valueName": "max"
-      },
-      {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorPostfix": false,
-        "colorPrefix": false,
-        "colorValue": true,
-        "colors": [
-          "#299c46",
-          "rgba(237, 129, 40, 0.89)",
-          "#d44a3a"
-        ],
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {},
-          "overrides": []
-        },
-        "format": "none",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
-        },
-        "gridPos": {
-          "h": 6,
-          "w": 4,
-          "x": 16,
-          "y": 0
-        },
-        "id": 37,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "$$hashKey": "object:5014",
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "$$hashKey": "object:5015",
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "pluginVersion": "6.7.3",
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "80%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false,
-          "ymax": null,
-          "ymin": null
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "expr": "up{instance=~\"20.93.45.95:2004\"} ",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          }
-        ],
-        "thresholds": "",
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "VM Instance \"20.93.45.95\" Status",
-        "type": "singlestat",
-        "valueFontSize": "200%",
-        "valueMaps": [
-          {
-            "$$hashKey": "object:5017",
-            "op": "=",
-            "text": "Online",
-            "value": "1"
-          },
-          {
-            "$$hashKey": "object:5799",
-            "op": "=",
-            "text": "Down",
-            "value": "0"
-          }
-        ],
-        "valueName": "max"
-      },
-      {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorPostfix": false,
-        "colorPrefix": false,
-        "colorValue": true,
-        "colors": [
-          "#299c46",
-          "rgba(237, 129, 40, 0.89)",
-          "#d44a3a"
-        ],
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {},
-          "overrides": []
-        },
-        "format": "none",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
-        },
-        "gridPos": {
-          "h": 6,
-          "w": 4,
-          "x": 20,
-          "y": 0
-        },
-        "id": 36,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "$$hashKey": "object:5014",
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "$$hashKey": "object:5015",
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "pluginVersion": "6.7.3",
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "80%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false,
-          "ymax": null,
-          "ymin": null
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "expr": "up{instance=~\"core1:2004\"} ",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          }
-        ],
-        "thresholds": "",
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "Instance \"core1\" Status",
-        "type": "singlestat",
-        "valueFontSize": "200%",
-        "valueMaps": [
-          {
-            "$$hashKey": "object:5017",
-            "op": "=",
-            "text": "Online",
-            "value": "1"
-          },
-          {
-            "$$hashKey": "object:5834",
-            "op": "=",
-            "text": "Down",
-            "value": "0"
-          }
-        ],
-        "valueName": "max"
-      },
-      {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "#299c46",
-          "rgba(237, 129, 40, 0.89)",
-          "#d44a3a"
-        ],
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {},
-          "overrides": []
-        },
-        "format": "none",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 4,
-          "x": 0,
-          "y": 6
-        },
-        "id": 30,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "$$hashKey": "object:2672",
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "$$hashKey": "object:2673",
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "pluginVersion": "6.7.3",
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false,
-          "ymax": null,
-          "ymin": null
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "exemplar": true,
-            "expr": "neo4j_[[Database]]_ids_in_use_node{instance=~\"$leader\"}",
-            "format": "time_series",
-            "instant": false,
-            "interval": "",
-            "intervalFactor": 1,
-            "legendFormat": "",
-            "refId": "A"
-          }
-        ],
-        "thresholds": "",
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "Total Number of Nodes",
-        "type": "singlestat",
-        "valueFontSize": "80%",
-        "valueMaps": [
-          {
-            "$$hashKey": "object:2675",
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "first"
-      },
-      {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "#299c46",
-          "rgba(237, 129, 40, 0.89)",
-          "#d44a3a"
-        ],
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {},
-          "overrides": []
-        },
-        "format": "none",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 4,
-          "x": 4,
-          "y": 6
-        },
-        "id": 32,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "$$hashKey": "object:4220",
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "$$hashKey": "object:4221",
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "pluginVersion": "6.7.3",
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false,
-          "ymax": null,
-          "ymin": null
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "exemplar": true,
-            "expr": "neo4j_[[Database]]_ids_in_use_relationship{instance=~\"$leader\"}",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          }
-        ],
-        "thresholds": "",
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "Total Number of Relationships",
-        "type": "singlestat",
-        "valueFontSize": "80%",
-        "valueMaps": [
-          {
-            "$$hashKey": "object:4223",
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "avg"
-      },
-      {
-        "cacheTimeout": null,
-        "colorBackground": false,
-        "colorValue": false,
-        "colors": [
-          "#299c46",
-          "rgba(237, 129, 40, 0.89)",
-          "#d44a3a"
-        ],
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {},
-          "overrides": []
-        },
-        "format": "decbytes",
-        "gauge": {
-          "maxValue": 100,
-          "minValue": 0,
-          "show": false,
-          "thresholdLabels": false,
-          "thresholdMarkers": true
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 4,
-          "x": 8,
-          "y": 6
-        },
-        "id": 34,
-        "interval": null,
-        "links": [],
-        "mappingType": 1,
-        "mappingTypes": [
-          {
-            "$$hashKey": "object:4333",
-            "name": "value to text",
-            "value": 1
-          },
-          {
-            "$$hashKey": "object:4334",
-            "name": "range to text",
-            "value": 2
-          }
-        ],
-        "maxDataPoints": 100,
-        "nullPointMode": "connected",
-        "nullText": null,
-        "postfix": "",
-        "postfixFontSize": "50%",
-        "prefix": "",
-        "prefixFontSize": "50%",
-        "rangeMaps": [
-          {
-            "from": "null",
-            "text": "N/A",
-            "to": "null"
-          }
-        ],
-        "sparkline": {
-          "fillColor": "rgba(31, 118, 189, 0.18)",
-          "full": false,
-          "lineColor": "rgb(31, 120, 193)",
-          "show": false,
-          "ymax": null,
-          "ymin": null
-        },
-        "tableColumn": "",
-        "targets": [
-          {
-            "expr": "neo4j_[[Database]]_store_size_total{instance=~\"$leader\"}",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          }
-        ],
-        "thresholds": "",
-        "timeFrom": null,
-        "timeShift": null,
-        "title": "Total. Store Size",
-        "type": "singlestat",
-        "valueFontSize": "80%",
-        "valueMaps": [
-          {
-            "$$hashKey": "object:4336",
-            "op": "=",
-            "text": "N/A",
-            "value": "null"
-          }
-        ],
-        "valueName": "avg"
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 12,
-          "y": 6
-        },
-        "hiddenSeries": false,
-        "id": 4,
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "7.5.2",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "neo4j_[[Database]]_causal_clustering_core_is_leader{instance=~\"$neo4j_instance\"}",
-            "hide": false,
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Current Leader",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "$$hashKey": "object:1589",
-            "decimals": 0,
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "$$hashKey": "object:1590",
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "$job",
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 8,
-          "w": 8,
-          "x": 0,
-          "y": 14
-        },
-        "hiddenSeries": false,
-        "id": 6,
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "7.5.2",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "neo4j_[[Database]]_store_size_total{instance=~\"$neo4j_instance\"}",
-            "hide": false,
-            "instant": false,
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Database Size on Disk",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "$$hashKey": "object:2736",
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "$$hashKey": "object:2737",
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "Prometheus",
-        "description": "Total number of graph items: node, relationships, ...",
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 8,
-          "w": 8,
-          "x": 8,
-          "y": 14
-        },
-        "hiddenSeries": false,
-        "id": 12,
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "7.5.2",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "label_replace({__name__=~\"neo4j_[[Database]]_ids_in_use_(node|property|relationship)\", instance=~\"$neo4j_instance\"}, \"label\", \"$1\", \"__name__\", \"neo4j_[[Database]]_ids_in_use_(.+)\")",
-            "hide": false,
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          },
-          {
-            "expr": "neo4j_[[Database]]_ids_in_use_relationship_type{instance=~\"$neo4j_instance\"}  ",
-            "hide": false,
-            "interval": "",
-            "legendFormat": "",
-            "refId": "B"
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Counters of Graph Items",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "$$hashKey": "object:1637",
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "$$hashKey": "object:1638",
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 8,
-          "w": 8,
-          "x": 16,
-          "y": 14
-        },
-        "hiddenSeries": false,
-        "id": 10,
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "7.5.2",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "rate(neo4j_[[Database]]_ids_in_use_node{instance=~\"$neo4j_instance\"}[$interval])",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          },
-          {
-            "expr": "rate(neo4j_[[Database]]_ids_in_use_relationship{instance=~\"$neo4j_instance\"}[$interval])",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "B"
-          },
-          {
-            "expr": "rate(neo4j_[[Database]]_ids_in_use_property{instance=~\"$neo4j_instance\"}[$interval])",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "C"
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Graph Items Creation Rate (ids)",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "$$hashKey": "object:1401",
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "$$hashKey": "object:1402",
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "Prometheus",
-        "description": "Active Transactions - Read and Write - \nand Peak concurrent",
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 8,
-          "w": 8,
-          "x": 0,
-          "y": 22
-        },
-        "hiddenSeries": false,
-        "id": 16,
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "7.5.2",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "neo4j_[[Database]]_transaction_active_read{instance=~\"$neo4j_instance\"}",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          },
-          {
-            "expr": "neo4j_[[Database]]_transaction_active_write{instance=~\"$neo4j_instance\"}",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "B"
-          },
-          {
-            "expr": "neo4j_[[Database]]_transaction_peak_concurrent_total{instance=~\"$neo4j_instance\"}",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "C"
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Active Transactions",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "transparent": true,
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "$$hashKey": "object:1796",
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "$$hashKey": "object:1797",
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 8,
-          "w": 8,
-          "x": 8,
-          "y": 22
-        },
-        "hiddenSeries": false,
-        "id": 18,
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "7.5.2",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "neo4j_[[Database]]_transaction_committed_total{instance=~\"$neo4j_instance\"}  ",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          },
-          {
-            "expr": "neo4j_[[Database]]_transaction_committed_read_total{instance=~\"$neo4j_instance\"}  ",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "B"
-          },
-          {
-            "expr": "neo4j_[[Database]]_transaction_committed_write_total{instance=~\"$neo4j_instance\"}  ",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "C"
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Committed transactions",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "$$hashKey": "object:1918",
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "$$hashKey": "object:1919",
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 8,
-          "w": 8,
-          "x": 16,
-          "y": 22
-        },
-        "hiddenSeries": false,
-        "id": 45,
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "7.5.2",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "idelta(neo4j_[[Database]]_transaction_committed_total[$interval])",
-            "instant": false,
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Transactions per second",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "$$hashKey": "object:1918",
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "$$hashKey": "object:1919",
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "Prometheus",
-        "description": "The total number of Bolt connections currently being executed.\n",
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 8,
-          "w": 8,
-          "x": 0,
-          "y": 30
-        },
-        "hiddenSeries": false,
-        "id": 28,
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "7.5.2",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": " neo4j_bolt_connections_running{instance=~\"$neo4j_instance\"} ",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Bolt Connections Running",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "Prometheus",
-        "description": "Neo4j caches 1000 plans by default. Seeing sustained replanning events or large spikes could indicate an issue that needs to be investigated.",
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 8,
-          "w": 8,
-          "x": 8,
-          "y": 30
-        },
-        "hiddenSeries": false,
-        "id": 26,
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "7.5.2",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "neo4j_[[Database]]_cypher_replan_events_total{instance=~\"$neo4j_instance\"}",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Cypher Replan Events",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 8,
-          "w": 8,
-          "x": 16,
-          "y": 30
-        },
-        "hiddenSeries": false,
-        "id": 43,
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "7.5.2",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "idelta(neo4j_[[Database]]_check_point_total_time_total{instance=~\"$neo4j_instance\"}[$interval])",
-            "hide": false,
-            "instant": false,
-            "interval": "",
-            "legendFormat": "",
-            "refId": "B"
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Checkpoint Duration",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "$$hashKey": "object:1918",
-            "format": "ms",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "$$hashKey": "object:1919",
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "Prometheus",
-        "description": "The total number of page faults happened in the page cache\n\n",
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 8,
-          "w": 8,
-          "x": 0,
-          "y": 38
-        },
-        "hiddenSeries": false,
-        "id": 24,
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "7.5.2",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "irate(neo4j_page_cache_page_faults_total{instance=~\"$neo4j_instance\"}[$interval]) ",
-            "hide": false,
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          },
-          {
-            "expr": "neo4j_page_cache_page_faults_total{instance=~\"$neo4j_instance\"}",
-            "hide": true,
-            "interval": "",
-            "legendFormat": "",
-            "refId": "B"
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Page Cache Total Faults",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "$$hashKey": "object:2120",
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "$$hashKey": "object:2121",
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "Prometheus",
-        "description": "Performance relies on efficiently using the page cache, so this metric should be in the 98-100% range consistently. If it is much lower than that, then the database is going to disk too often.",
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 8,
-          "w": 8,
-          "x": 8,
-          "y": 38
-        },
-        "hiddenSeries": false,
-        "id": 8,
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "7.5.2",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "neo4j_page_cache_hit_ratio{instance=~\"$neo4j_instance\"}",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Pagecache Hit Ratio",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "$$hashKey": "object:1260",
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "$$hashKey": "object:1261",
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 8,
-          "w": 8,
-          "x": 16,
-          "y": 38
-        },
-        "hiddenSeries": false,
-        "id": 14,
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "7.5.2",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "neo4j_[[Database]]_transaction_last_committed_tx_id_total{instance=~\"$neo4j_instance\"}",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Last Committed Transaction ID",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 7,
-          "w": 8,
-          "x": 0,
-          "y": 46
-        },
-        "hiddenSeries": false,
-        "id": 20,
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "7.5.2",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "neo4j_vm_heap_used{instance=~\"$neo4j_instance\"}",
-            "hide": false,
-            "interval": "",
-            "legendFormat": "",
-            "refId": "B"
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Heap Usage",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "$$hashKey": "object:2005",
-            "format": "decbytes",
-            "label": "",
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "$$hashKey": "object:2006",
-            "format": "decbytes",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "Prometheus",
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 7,
-          "w": 8,
-          "x": 8,
-          "y": 46
-        },
-        "hiddenSeries": false,
-        "id": 44,
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "7.5.2",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "idelta(neo4j_vm_gc_time_g1_old_generation_total[$interval])+idelta(neo4j_vm_gc_time_g1_young_generation_total[$interval])",
-            "hide": false,
-            "interval": "",
-            "legendFormat": "",
-            "refId": "B"
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Garbage Collection Pause Times",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "$$hashKey": "object:2005",
-            "format": "ms",
-            "label": "",
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "$$hashKey": "object:2006",
-            "format": "decbytes",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
-      },
-      {
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
-        "datasource": "Prometheus",
-        "description": "This metric shows what percentage of the allocated page cache is actually being used. If it is 100%, then it is likely that the hitratio will start dropping, and you should consider allocating more RAM to page cache.",
-        "fieldConfig": {
-          "defaults": {
-            "links": []
-          },
-          "overrides": []
-        },
-        "fill": 1,
-        "fillGradient": 0,
-        "gridPos": {
-          "h": 8,
-          "w": 8,
-          "x": 16,
-          "y": 46
-        },
-        "hiddenSeries": false,
-        "id": 22,
-        "legend": {
-          "avg": false,
-          "current": false,
-          "max": false,
-          "min": false,
-          "show": true,
-          "total": false,
-          "values": false
-        },
-        "lines": true,
-        "linewidth": 1,
-        "nullPointMode": "null",
-        "options": {
-          "alertThreshold": true
-        },
-        "percentage": false,
-        "pluginVersion": "7.5.2",
-        "pointradius": 2,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
-        "targets": [
-          {
-            "expr": "neo4j_page_cache_usage_ratio{instance=~\"$neo4j_instance\"}",
-            "interval": "",
-            "legendFormat": "",
-            "refId": "A"
-          }
-        ],
-        "thresholds": [],
-        "timeFrom": null,
-        "timeRegions": [],
-        "timeShift": null,
-        "title": "Page Cache Usage Ratio",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
-        "type": "graph",
-        "xaxis": {
-          "buckets": null,
-          "mode": "time",
-          "name": null,
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          },
-          {
-            "format": "short",
-            "label": null,
-            "logBase": 1,
-            "max": null,
-            "min": null,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false,
-          "alignLevel": null
-        }
+        "type": "dashboard"
       }
-    ],
-    "refresh": "5s",
-    "schemaVersion": 27,
-    "style": "dark",
-    "tags": [],
-    "templating": {
-      "list": [
-        {
-          "current": {
-            "selected": false,
-            "text": "Prometheus",
-            "value": "Prometheus"
-          },
-          "description": null,
-          "error": null,
-          "hide": 0,
-          "includeAll": false,
-          "label": null,
-          "multi": false,
-          "name": "job",
-          "options": [],
-          "query": "prometheus",
-          "queryValue": "",
-          "refresh": 1,
-          "regex": "Prometheus",
-          "skipUrlSync": false,
-          "type": "datasource"
-        },
-        {
-          "allValue": null,
-          "current": {
-            "selected": true,
-            "text": [
-              "All"
-            ],
-            "value": [
-              "$__all"
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 1,
+  "iteration": 1643629984872,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "fieldConfig": {
+        "defaults": {
+          "links": [],
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "Down"
+                }
+              },
+              "type": "special"
+            },
+            {
+              "options": {
+                "from": 0,
+                "result": {
+                  "text": "Up"
+                },
+                "to": 1
+              },
+              "type": "range"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
             ]
           },
-          "datasource": "Prometheus",
-          "definition": "label_values(instance)",
-          "description": null,
-          "error": null,
-          "hide": 2,
-          "includeAll": true,
-          "label": null,
-          "multi": true,
-          "name": "Instance",
-          "options": [],
-          "query": {
-            "query": "label_values(instance)",
-            "refId": "Prometheus-Instance-Variable-Query"
-          },
-          "refresh": 1,
-          "regex": "/^(.*?)\\:2004/",
-          "skipUrlSync": false,
-          "sort": 0,
-          "tagValuesQuery": "",
-          "tags": [],
-          "tagsQuery": "",
-          "type": "query",
-          "useTags": false
+          "unit": "none"
         },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 0,
+        "y": 0
+      },
+      "id": 40,
+      "links": [],
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.3.4",
+      "targets": [
         {
-          "allValue": null,
-          "current": {
-            "selected": true,
-            "text": [
-              "All"
-            ],
-            "value": [
-              "$__all"
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "neo4j_[[Database]]_causal_clustering_core_is_leader{instance=~\"core1\"}",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Neo4j Status  - core1",
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "Down"
+                }
+              },
+              "type": "special"
+            },
+            {
+              "options": {
+                "from": 0,
+                "result": {
+                  "text": "Up"
+                },
+                "to": 1
+              },
+              "type": "range"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
             ]
           },
-          "datasource": "Prometheus",
-          "definition": "label_values(instance)",
-          "description": null,
-          "error": null,
-          "hide": 0,
-          "includeAll": true,
-          "label": "Neo4j Instance",
-          "multi": true,
-          "name": "neo4j_instance",
-          "options": [],
-          "query": {
-            "query": "label_values(instance)",
-            "refId": "Prometheus-neo4j_instance-Variable-Query"
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 4,
+        "y": 0
+      },
+      "id": 41,
+      "links": [],
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.3.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
           },
-          "refresh": 2,
-          "regex": "/core*|rr*/",
-          "skipUrlSync": false,
-          "sort": 0,
-          "tagValuesQuery": "",
-          "tags": [],
-          "tagsQuery": "",
-          "type": "query",
-          "useTags": false
+          "exemplar": true,
+          "expr": "neo4j_[[Database]]_causal_clustering_core_is_leader{instance=~\"core2\"}",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Neo4j Status  - core2",
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "Down"
+                }
+              },
+              "type": "special"
+            },
+            {
+              "options": {
+                "from": 0,
+                "result": {
+                  "text": "Up"
+                },
+                "to": 1
+              },
+              "type": "range"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 8,
+        "y": 0
+      },
+      "id": 42,
+      "links": [],
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.3.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "neo4j_[[Database]]_causal_clustering_core_is_leader{instance=~\"core3\"}",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Neo4j Status  - core3",
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "1": {
+                  "text": "Online"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 12,
+        "y": 0
+      },
+      "id": 38,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "max"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.3.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "up{instance=~\"core1\"}",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "VM Instance \"core1\" Status",
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "text": "Down"
+                },
+                "1": {
+                  "text": "Online"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 16,
+        "y": 0
+      },
+      "id": 37,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "max"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.3.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "up{instance=~\"core2\"}",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "VM Instance \"core2\" Status",
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "text": "Down"
+                },
+                "1": {
+                  "text": "Online"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 20,
+        "y": 0
+      },
+      "id": 36,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "max"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.3.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "up{instance=~\"core3\"} ",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Instance \"core3\" Status",
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 0,
+        "y": 6
+      },
+      "id": 30,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "first"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.3.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": false,
+          "expr": "neo4j_[[Database]]_neo4j_count_node{instance=~\"$leader\"}",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Total Number of Nodes",
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 4,
+        "y": 6
+      },
+      "id": 32,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.3.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": false,
+          "expr": "neo4j_[[Database]]_neo4j_count_relationship{instance=~\"$leader\"}",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Total Number of Relationships",
+      "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 8,
+        "y": 6
+      },
+      "id": 34,
+      "links": [],
+      "maxDataPoints": 100,
+      "options": {
+        "colorMode": "none",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.3.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": false,
+          "expr": "neo4j_[[Database]]_store_size_total{instance=~\"$leader\"}",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "Total. Store Size",
+      "type": "stat"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 6
+      },
+      "hiddenSeries": false,
+      "id": 4,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.3.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "neo4j_[[Database]]_causal_clustering_core_is_leader{instance=~\"$neo4j_instance\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Current Leader",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1589",
+          "decimals": 0,
+          "format": "short",
+          "logBase": 1,
+          "show": true
         },
         {
-          "allValue": null,
-          "current": {
+          "$$hashKey": "object:1590",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "uid": "$job"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 14
+      },
+      "hiddenSeries": false,
+      "id": 6,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.3.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "neo4j_[[Database]]_store_size_total{instance=~\"$neo4j_instance\"}",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Database Size on Disk",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:2736",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:2737",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "Total number of graph items: node, relationships, ...",
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 14
+      },
+      "hiddenSeries": false,
+      "id": 12,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.3.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "label_replace({__name__=~\"neo4j_[[Database]]_ids_in_use_(node|property|relationship)\", instance=~\"$neo4j_instance\"}, \"label\", \"$1\", \"__name__\", \"neo4j_[[Database]]_ids_in_use_(.+)\")",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        },
+        {
+          "expr": "neo4j_[[Database]]_ids_in_use_relationship_type{instance=~\"$neo4j_instance\"}  ",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Counters of Graph Items",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1637",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1638",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 14
+      },
+      "hiddenSeries": false,
+      "id": 10,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.3.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "rate(neo4j_[[Database]]_ids_in_use_node{instance=~\"$neo4j_instance\"}[$interval])",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        },
+        {
+          "expr": "rate(neo4j_[[Database]]_ids_in_use_relationship{instance=~\"$neo4j_instance\"}[$interval])",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "B"
+        },
+        {
+          "expr": "rate(neo4j_[[Database]]_ids_in_use_property{instance=~\"$neo4j_instance\"}[$interval])",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "C"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Graph Items Creation Rate (ids)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1401",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1402",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "Active Transactions - Read and Write - \nand Peak concurrent",
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 22
+      },
+      "hiddenSeries": false,
+      "id": 16,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.3.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "neo4j_[[Database]]_transaction_active_read{instance=~\"$neo4j_instance\"}",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        },
+        {
+          "expr": "neo4j_[[Database]]_transaction_active_write{instance=~\"$neo4j_instance\"}",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "B"
+        },
+        {
+          "expr": "neo4j_[[Database]]_transaction_peak_concurrent_total{instance=~\"$neo4j_instance\"}",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "C"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Active Transactions",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "transparent": true,
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1796",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1797",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 22
+      },
+      "hiddenSeries": false,
+      "id": 18,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.3.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "neo4j_[[Database]]_transaction_committed_total{instance=~\"$neo4j_instance\"}  ",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        },
+        {
+          "expr": "neo4j_[[Database]]_transaction_committed_read_total{instance=~\"$neo4j_instance\"}  ",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "B"
+        },
+        {
+          "expr": "neo4j_[[Database]]_transaction_committed_write_total{instance=~\"$neo4j_instance\"}  ",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "C"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Committed transactions",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1918",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1919",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 22
+      },
+      "hiddenSeries": false,
+      "id": 45,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.3.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "idelta(neo4j_[[Database]]_transaction_committed_total[$interval])",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Transactions per second",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1918",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1919",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "The total number of Bolt connections currently being executed.\n",
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 30
+      },
+      "hiddenSeries": false,
+      "id": 28,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.3.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": " neo4j_bolt_connections_running{instance=~\"$neo4j_instance\"} ",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Bolt Connections Running",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "Neo4j caches 1000 plans by default. Seeing sustained replanning events or large spikes could indicate an issue that needs to be investigated.",
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 30
+      },
+      "hiddenSeries": false,
+      "id": 26,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.3.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "neo4j_[[Database]]_cypher_replan_events_total{instance=~\"$neo4j_instance\"}",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Cypher Replan Events",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 30
+      },
+      "hiddenSeries": false,
+      "id": 43,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.3.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "idelta(neo4j_[[Database]]_check_point_total_time_total{instance=~\"$neo4j_instance\"}[$interval])",
+          "hide": false,
+          "instant": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Checkpoint Duration",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1918",
+          "format": "ms",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1919",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "The total number of page faults happened in the page cache\n\n",
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 38
+      },
+      "hiddenSeries": false,
+      "id": 24,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.3.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "irate(neo4j_page_cache_page_faults_total{instance=~\"$neo4j_instance\"}[$interval]) ",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        },
+        {
+          "expr": "neo4j_page_cache_page_faults_total{instance=~\"$neo4j_instance\"}",
+          "hide": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Page Cache Total Faults",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:2120",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:2121",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "Performance relies on efficiently using the page cache, so this metric should be in the 98-100% range consistently. If it is much lower than that, then the database is going to disk too often.",
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 8,
+        "y": 38
+      },
+      "hiddenSeries": false,
+      "id": 8,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.3.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "neo4j_page_cache_hit_ratio{instance=~\"$neo4j_instance\"}",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Pagecache Hit Ratio",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1260",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1261",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 38
+      },
+      "hiddenSeries": false,
+      "id": 14,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.3.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "neo4j_[[Database]]_transaction_last_committed_tx_id_total{instance=~\"$neo4j_instance\"}",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Last Committed Transaction ID",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 46
+      },
+      "hiddenSeries": false,
+      "id": 20,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.3.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "neo4j_vm_heap_used{instance=~\"$neo4j_instance\"}",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Heap Usage",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:2005",
+          "format": "decbytes",
+          "label": "",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:2006",
+          "format": "decbytes",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 8,
+        "y": 46
+      },
+      "hiddenSeries": false,
+      "id": 44,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.3.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "idelta(neo4j_vm_gc_time_g1_old_generation_total[$interval])+idelta(neo4j_vm_gc_time_g1_young_generation_total[$interval])",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Garbage Collection Pause Times",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:2005",
+          "format": "ms",
+          "label": "",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:2006",
+          "format": "decbytes",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "PBFA97CFB590B2093"
+      },
+      "description": "This metric shows what percentage of the allocated page cache is actually being used. If it is 100%, then it is likely that the hitratio will start dropping, and you should consider allocating more RAM to page cache.",
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 46
+      },
+      "hiddenSeries": false,
+      "id": 22,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "8.3.4",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "neo4j_page_cache_usage_ratio{instance=~\"$neo4j_instance\"}",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "Page Cache Usage Ratio",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 34,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "Prometheus",
+          "value": "Prometheus"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "job",
+        "options": [],
+        "query": "prometheus",
+        "queryValue": "",
+        "refresh": 1,
+        "regex": "Prometheus",
+        "skipUrlSync": false,
+        "type": "datasource"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFA97CFB590B2093"
+        },
+        "definition": "label_values(instance)",
+        "hide": 2,
+        "includeAll": true,
+        "multi": true,
+        "name": "Instance",
+        "options": [],
+        "query": {
+          "query": "label_values(instance)",
+          "refId": "Prometheus-Instance-Variable-Query"
+        },
+        "refresh": 1,
+        "regex": "/^(.*?)\\:2004/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFA97CFB590B2093"
+        },
+        "definition": "label_values(instance)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Neo4j Instance",
+        "multi": true,
+        "name": "neo4j_instance",
+        "options": [],
+        "query": {
+          "query": "label_values(instance)",
+          "refId": "Prometheus-neo4j_instance-Variable-Query"
+        },
+        "refresh": 2,
+        "regex": "/core*|rr*/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": "neo4j",
+          "value": "neo4j"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFA97CFB590B2093"
+        },
+        "definition": "metrics(_store_size)",
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "Database",
+        "options": [],
+        "query": {
+          "query": "metrics(_store_size)",
+          "refId": "Prometheus-Database-Variable-Query"
+        },
+        "refresh": 1,
+        "regex": ".*_([^_]+)_store.*",
+        "skipUrlSync": false,
+        "sort": 5,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "auto": true,
+        "auto_count": 30,
+        "auto_min": "10s",
+        "current": {
+          "selected": false,
+          "text": "auto",
+          "value": "$__auto_interval_interval"
+        },
+        "hide": 0,
+        "name": "interval",
+        "options": [
+          {
             "selected": true,
-            "text": "charges",
-            "value": "charges"
-          },
-          "datasource": "Prometheus",
-          "definition": "metrics(_store_size)",
-          "description": null,
-          "error": null,
-          "hide": 0,
-          "includeAll": false,
-          "label": null,
-          "multi": false,
-          "name": "Database",
-          "options": [],
-          "query": {
-            "query": "metrics(_store_size)",
-            "refId": "Prometheus-Database-Variable-Query"
-          },
-          "refresh": 1,
-          "regex": ".*_([^_]+)_store.*",
-          "skipUrlSync": false,
-          "sort": 5,
-          "tagValuesQuery": "",
-          "tags": [],
-          "tagsQuery": "",
-          "type": "query",
-          "useTags": false
-        },
-        {
-          "auto": true,
-          "auto_count": 30,
-          "auto_min": "10s",
-          "current": {
-            "selected": false,
             "text": "auto",
             "value": "$__auto_interval_interval"
           },
-          "description": null,
-          "error": null,
-          "hide": 0,
-          "label": null,
-          "name": "interval",
-          "options": [
-            {
-              "selected": true,
-              "text": "auto",
-              "value": "$__auto_interval_interval"
-            },
-            {
-              "selected": false,
-              "text": "1m",
-              "value": "1m"
-            },
-            {
-              "selected": false,
-              "text": "10m",
-              "value": "10m"
-            },
-            {
-              "selected": false,
-              "text": "30m",
-              "value": "30m"
-            },
-            {
-              "selected": false,
-              "text": "1h",
-              "value": "1h"
-            },
-            {
-              "selected": false,
-              "text": "6h",
-              "value": "6h"
-            },
-            {
-              "selected": false,
-              "text": "12h",
-              "value": "12h"
-            },
-            {
-              "selected": false,
-              "text": "1d",
-              "value": "1d"
-            },
-            {
-              "selected": false,
-              "text": "7d",
-              "value": "7d"
-            },
-            {
-              "selected": false,
-              "text": "14d",
-              "value": "14d"
-            },
-            {
-              "selected": false,
-              "text": "30d",
-              "value": "30d"
-            }
-          ],
-          "query": "1m,10m,30m,1h,6h,12h,1d,7d,14d,30d",
-          "refresh": 2,
-          "skipUrlSync": false,
-          "type": "interval"
-        },
-        {
-          "allValue": null,
-          "current": {
+          {
             "selected": false,
-            "text": "core2:2004",
-            "value": "core2:2004"
+            "text": "1m",
+            "value": "1m"
           },
-          "datasource": "Prometheus",
-          "definition": "query_result(neo4j_[[Database]]_causal_clustering_core_is_leader > 0 )",
-          "description": null,
-          "error": null,
-          "hide": 0,
-          "includeAll": false,
-          "label": "Leader",
-          "multi": false,
-          "name": "leader",
-          "options": [],
-          "query": {
-            "query": "query_result(neo4j_[[Database]]_causal_clustering_core_is_leader > 0 )",
-            "refId": "Prometheus-leader-Variable-Query"
+          {
+            "selected": false,
+            "text": "10m",
+            "value": "10m"
           },
-          "refresh": 2,
-          "regex": "/\"([^\"]+)\"/",
-          "skipUrlSync": false,
-          "sort": 0,
-          "tagValuesQuery": "",
-          "tags": [],
-          "tagsQuery": "",
-          "type": "query",
-          "useTags": false
-        }
-      ]
-    },
-    "time": {
-      "from": "now-15m",
-      "to": "now"
-    },
-    "timepicker": {
-      "refresh_intervals": [
-        "5s",
-        "10s",
-        "30s",
-        "1m",
-        "5m",
-        "15m",
-        "30m",
-        "1h",
-        "2h",
-        "1d"
-      ]
-    },
-    "timezone": "",
-    "title": "Neo4j 4.0 Overall Cluster Dashboard",
-    "uid": "nHgfgv6Zk",
-    "version": 1
-  }
+          {
+            "selected": false,
+            "text": "30m",
+            "value": "30m"
+          },
+          {
+            "selected": false,
+            "text": "1h",
+            "value": "1h"
+          },
+          {
+            "selected": false,
+            "text": "6h",
+            "value": "6h"
+          },
+          {
+            "selected": false,
+            "text": "12h",
+            "value": "12h"
+          },
+          {
+            "selected": false,
+            "text": "1d",
+            "value": "1d"
+          },
+          {
+            "selected": false,
+            "text": "7d",
+            "value": "7d"
+          },
+          {
+            "selected": false,
+            "text": "14d",
+            "value": "14d"
+          },
+          {
+            "selected": false,
+            "text": "30d",
+            "value": "30d"
+          }
+        ],
+        "query": "1m,10m,30m,1h,6h,12h,1d,7d,14d,30d",
+        "refresh": 2,
+        "skipUrlSync": false,
+        "type": "interval"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "core2",
+          "value": "core2"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFA97CFB590B2093"
+        },
+        "definition": "query_result(neo4j_[[Database]]_causal_clustering_core_is_leader > 0 )",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Leader",
+        "multi": false,
+        "name": "leader",
+        "options": [],
+        "query": {
+          "query": "query_result(neo4j_[[Database]]_causal_clustering_core_is_leader > 0 )",
+          "refId": "Prometheus-leader-Variable-Query"
+        },
+        "refresh": 2,
+        "regex": "/\"([^\"]+)\"/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "Neo4j 4.0 Overall Cluster Dashboard",
+  "uid": "nHgfgv6Zk",
+  "version": 7,
+  "weekStart": ""
+}
