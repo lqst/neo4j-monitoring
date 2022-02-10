@@ -2,12 +2,12 @@ scrape_configs:
   - job_name: 'neo4j-prometheus'
     scrape_interval: 10s
     static_configs:
-    - targets: ['51.138.232.213:2004']
+    - targets: ['51.138.235.31:2004']
       labels:
         instance: 'core1'
-    - targets: ['51.138.232.216:2004']
+    - targets: ['51.138.232.177:2004']
       labels:
         instance: 'core2'
-    - targets: ['51.138.232.218:2004']
+    - targets: ['51.138.232.200:2004']
       labels:
         instance: 'core3'
