@@ -6,15 +6,15 @@ services:
     ports:
       - "9090:9090"
     volumes: 
-      - "/config/prometheus.yml:/etc/prometheus/prometheus.yml"
+      - "./config/prometheus.yml:/etc/prometheus/prometheus.yml"
   grafana:
     container_name: grafana
     image: grafana/grafana
     ports: 
       - "3000:3000"
     volumes: 
-      - "/config/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml"
-networks:
-  default:
-    external: true
-    name: neo4jnetwork
+      - "./config/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml"
+#networks:
+#  default:
+#    external: true
+#    name: neo4jnetwork
