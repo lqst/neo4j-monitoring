@@ -1,3 +1,4 @@
+# docker-compose -f monitoring-compose.yml up
 version: "3.9"
 services:
   prometheus:
@@ -14,7 +15,6 @@ services:
       - "3000:3000"
     volumes: 
       - "./config/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml"
-#networks:
-#  default:
-#    external: true
-#    name: neo4jnetwork
+networks:
+  default:
+    name: neo4jnetwork

@@ -2,18 +2,18 @@ scrape_configs:
   - job_name: 'neo4j-prometheus'
     scrape_interval: 10s
     static_configs:
-    - targets: ['20.93.60.78:2004']
+    - targets: ['neo4j-server-1:2004']
       labels:
         instance: 'core1'
-    - targets: ['20.93.60.82:2004']
+    - targets: ['neo4j-server-2:2004']
       labels:
         instance: 'core2'
-    - targets: ['20.93.60.106:2004']
+    - targets: ['neo4j-server-3:2004']
       labels:
         instance: 'core3'
-    - targets: ['20.93.60.130:2004']
+    - targets: ['neo4j-server-4:2004']
       labels:
         instance: 'core4'
-    - targets: ['20.93.60.147:2004']
+    - targets: ['neo4j-server-5:2004']
       labels:
         instance: 'core5'

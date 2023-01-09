@@ -38,13 +38,19 @@ metrics.filter=*bolt.connections*,*bolt.messages_received*,*bolt.messages_starte
 ```
 
 
-## Start
+## Start prometheus and kibana
 ```shell
-docker-compose up
+docker-compose -f monitoring-compose.yml up
 ```
 
-## Grafana
+## Grafana dashboard
 
 Navigate to localhost:3000 
 - Default user/pass: admin/admin
 - Import dashboard.json
+
+
+## Start neo4j
+```shell
+docker compose -f cluster-compose.yml up
+```
