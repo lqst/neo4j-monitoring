@@ -15,6 +15,14 @@ services:
       - "3000:3000"
     volumes: 
       - "./config/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml"
+  loki:
+    image: grafana/loki:2.3.0
+    hostname: "loki"
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    volumes: 
+      - "./config/loki-config.yml:/etc/loki/local-config.yaml"
 networks:
   default:
     name: neo4jnetwork

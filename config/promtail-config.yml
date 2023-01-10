@@ -1,0 +1,51 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push
+
+scrape_configs:
+  - job_name: neo4j_query_log_1
+    static_configs:
+    - targets:
+        - loki
+      labels:
+        job: querylogs1
+        type: querylog
+        __path__: /var/log/neo4j1/query.log
+  - job_name: neo4j_query_log_2
+    static_configs:
+    - targets:
+        - loki
+      labels:
+        job: querylogs2
+        type: querylog
+        __path__: /var/log/neo4j2/query.log
+  - job_name: neo4j_query_log_3
+    static_configs:
+    - targets:
+        - loki
+      labels:
+        job: querylogs3
+        type: querylog
+        __path__: /var/log/neo4j3/query.log
+  - job_name: neo4j_query_log_4
+    static_configs:
+    - targets:
+        - loki
+      labels:
+        job: querylogs4
+        type: querylog
+        __path__: /var/log/neo4j4/query.log
+  - job_name: neo4j_query_log_5
+    static_configs:
+    - targets:
+        - loki
+      labels:
+        job: querylogs5
+        type: querylog
+        __path__: /var/log/neo4j5/query.log

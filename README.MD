@@ -54,3 +54,18 @@ Navigate to localhost:3000
 ```shell
 docker compose -f cluster-compose.yml up
 ```
+
+## Create demo database
+
+Enable all servers from cypher shell
+```cypher
+show servers;
+enable server "uuid";
+enable server "uuid";
+```
+
+Create a demo database with topology
+```cypher
+create database demo topology 3 primaries 2 secondaries;
+```
+
