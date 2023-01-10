@@ -1,3 +1,7 @@
+# About
+Playground for Metrics (prometheus, grafana) and Logging (promtail, loki and grafana)
+
+
 # Setup
 
 Modify prometheus.yml scrape config
@@ -47,7 +51,8 @@ docker-compose -f monitoring-compose.yml up
 
 Navigate to localhost:3000 
 - Default user/pass: admin/admin
-- Import dashboard.json
+- Import dashboard_5.json (for metics dashboard)
+- Import querydashboard_5.json  (for query log dashboard)
 
 
 ## Start neo4j
@@ -68,4 +73,3 @@ Create a demo database with topology
 ```cypher
 create database demo topology 3 primaries 2 secondaries;
 ```
-
