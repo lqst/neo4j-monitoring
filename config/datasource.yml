@@ -15,3 +15,12 @@ datasources:
     url: http://loki:3100
     jsonData:
       maxLines: 1000
+
+  - name: Neo4j Cluster
+    type: kniepdennis-neo4j-datasource
+    access: proxy
+    jsonData:
+      url: neo4j://neo4j-server-1:7687
+      database: demo
+      username: neo4j
+      password: test1234

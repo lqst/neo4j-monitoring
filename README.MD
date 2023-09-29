@@ -73,3 +73,9 @@ Create a demo database with topology
 ```cypher
 create database demo topology 3 primaries 2 secondaries;
 ```
+
+
+## Run firefox + vnc
+docker run --network neo4jnetwork -p 8080:8080 -p 5900:5900 msjpq/firefox-vnc
+
+connect with remote ripple or some other vnc client
