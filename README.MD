@@ -79,3 +79,52 @@ create database demo topology 3 primaries 2 secondaries;
 docker run --network neo4jnetwork -p 8080:8080 -p 5900:5900 msjpq/firefox-vnc
 
 connect with remote ripple or some other vnc client
+
+
+
+## GDS notes
+
+Setting up the database with 1 primary and 1 secondary
+```cypher 
+show servers yield serverId, name, address return *;
++---------------------------------------------------------------------------------------------------------+
+| serverId                               | name                                   | address               |
++---------------------------------------------------------------------------------------------------------+
+| "320a3c06-59da-47dc-8eaf-e69b6618e5c5" | "320a3c06-59da-47dc-8eaf-e69b6618e5c5" | "neo4j-server-5:7687" |
+| "353d7a95-72eb-4edb-8cc7-212a01ac8e24" | "353d7a95-72eb-4edb-8cc7-212a01ac8e24" | "neo4j-server-4:7687" |
+| "66b2e876-db14-4753-b451-2428f14aa1c1" | "66b2e876-db14-4753-b451-2428f14aa1c1" | "neo4j-server-1:7687" |
+| "9079b113-c5f0-4886-8ab5-d10dea8875f5" | "9079b113-c5f0-4886-8ab5-d10dea8875f5" | "neo4j-server-3:7687" |
+| "fa52a014-9fb3-49a2-8c63-9e7ac64f948f" | "fa52a014-9fb3-49a2-8c63-9e7ac64f948f" | "neo4j-server-2:7687" |
++---------------------------------------------------------------------------------------------------------+
+
+
+RENAME SERVER '320a3c06-59da-47dc-8eaf-e69b6618e5c5' TO 'neo4j-server-5';
+RENAME SERVER '353d7a95-72eb-4edb-8cc7-212a01ac8e24' TO 'neo4j-server-4';
+RENAME SERVER '66b2e876-db14-4753-b451-2428f14aa1c1' TO 'neo4j-server-1';
+RENAME SERVER '9079b113-c5f0-4886-8ab5-d10dea8875f5' TO 'neo4j-server-3';
+RENAME SERVER 'fa52a014-9fb3-49a2-8c63-9e7ac64f948f' TO 'neo4j-server-2';
+
+// I want my demo database to be on server 1 as primary and server 5 as secondary (GDS)
+ALTER SERVER 'neo4j-server-2' SET OPTIONS {deniedDatabases:['demo']};
+ALTER SERVER 'neo4j-server-3' SET OPTIONS {deniedDatabases:['demo']};
+ALTER SERVER 'neo4j-server-4' SET OPTIONS {deniedDatabases:['demo']};
+
+create database demo topology 1 primary 1 secondary;
+
+```
+
+Generate some data and run gds:
+
+```cypher 
+
+create (:Element{name:"Service 1"})<-[:LINK]-(:Element{name:"LB"})-[:LINK]->(:Element{name:"Service 2"});
+
+// connect with bolt to server 5: 
+// cypher-shell -a bolt://neo4j-server-5:7687 -d demo
+// cypher-shell -a neo4j://neo4j-server-5:7687?tags=gds -d demo
+
+call gds.graph.project('g1','*','*');
+call gds.pageRank.write('g1', {writeProperty: 'pagerank'});
+
+```
+
