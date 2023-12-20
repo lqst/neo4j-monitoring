@@ -98,7 +98,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.2",
+      "pluginVersion": "9.4.7",
       "targets": [
         {
           "datasource": {
@@ -186,7 +186,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.2",
+      "pluginVersion": "9.4.7",
       "targets": [
         {
           "datasource": {
@@ -274,7 +274,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.2",
+      "pluginVersion": "9.4.7",
       "targets": [
         {
           "datasource": {
@@ -362,7 +362,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.2",
+      "pluginVersion": "9.4.7",
       "targets": [
         {
           "datasource": {
@@ -450,7 +450,7 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.2",
+      "pluginVersion": "9.4.7",
       "targets": [
         {
           "datasource": {
@@ -529,7 +529,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.2",
+      "pluginVersion": "9.4.7",
       "targets": [
         {
           "datasource": {
@@ -609,7 +609,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.2",
+      "pluginVersion": "9.4.7",
       "targets": [
         {
           "datasource": {
@@ -690,7 +690,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.2",
+      "pluginVersion": "9.4.7",
       "targets": [
         {
           "datasource": {
@@ -770,7 +770,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.2",
+      "pluginVersion": "9.4.7",
       "targets": [
         {
           "datasource": {
@@ -850,7 +850,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "9.3.2",
+      "pluginVersion": "9.4.7",
       "targets": [
         {
           "datasource": {
@@ -928,7 +928,7 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 24,
+        "w": 12,
         "x": 0,
         "y": 8
       },
@@ -952,7 +952,7 @@
             "uid": "P8E80F9AEF21F6940"
           },
           "editorMode": "builder",
-          "expr": "avg by(filename) (avg_over_time({type=\"querylog\"} |= `elapsedTimeMs` | json | line_format `{{. elapsedTimeMs}}` | database = `$Database` | unwrap elapsedTimeMs [1m]))",
+          "expr": "avg by(query) (avg_over_time({type=\"querylog\"} |= `elapsedTimeMs` | json | line_format `{{. elapsedTimeMs}}` | database = `$Database` | unwrap elapsedTimeMs [1m]))",
           "legendFormat": "",
           "queryType": "range",
           "refId": "A"
@@ -1020,9 +1020,9 @@
       },
       "gridPos": {
         "h": 8,
-        "w": 24,
-        "x": 0,
-        "y": 16
+        "w": 12,
+        "x": 12,
+        "y": 8
       },
       "id": 56,
       "options": {
@@ -1044,7 +1044,7 @@
             "uid": "P8E80F9AEF21F6940"
           },
           "editorMode": "builder",
-          "expr": "avg by(filename) (avg_over_time({type=\"querylog\"} |= `elapsedTimeMs` | json | line_format `{{. elapsedTimeMs}}` | database = `$Database` | unwrap planning [1m]))",
+          "expr": "avg by(query) (avg_over_time({type=\"querylog\"} |= `elapsedTimeMs` | json | line_format `{{. elapsedTimeMs}}` | database = `$Database` | unwrap planning [1m]))",
           "legendFormat": "",
           "queryType": "range",
           "refId": "A"
@@ -1062,7 +1062,7 @@
         "h": 12,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 16
       },
       "id": 53,
       "options": {
@@ -1072,7 +1072,7 @@
         "showCommonLabels": false,
         "showLabels": false,
         "showTime": false,
-        "sortOrder": "Ascending",
+        "sortOrder": "Descending",
         "wrapLogMessage": false
       },
       "targets": [
@@ -1082,7 +1082,7 @@
             "uid": "P8E80F9AEF21F6940"
           },
           "editorMode": "code",
-          "expr": "{type=\"querylog\"} | json | database = `$Database`",
+          "expr": "{type=\"querylog\"} | json | database = `$Database` |~ `$search_log`",
           "queryType": "range",
           "refId": "A"
         }
@@ -1091,8 +1091,9 @@
       "type": "logs"
     }
   ],
-  "refresh": "5s",
-  "schemaVersion": 37,
+  "refresh": "1h",
+  "revision": 1,
+  "schemaVersion": 38,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -1287,9 +1288,10 @@
       },
       {
         "current": {
+          "isNone": true,
           "selected": false,
-          "text": "core5",
-          "value": "core5"
+          "text": "None",
+          "value": ""
         },
         "datasource": {
           "type": "prometheus",
@@ -1314,6 +1316,26 @@
         "tagsQuery": "",
         "type": "query",
         "useTags": false
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "",
+          "value": ""
+        },
+        "hide": 0,
+        "label": "search_log",
+        "name": "search_log",
+        "options": [
+          {
+            "selected": true,
+            "text": "",
+            "value": ""
+          }
+        ],
+        "query": "",
+        "skipUrlSync": false,
+        "type": "textbox"
       }
     ]
   },
@@ -1338,6 +1360,6 @@
   "timezone": "",
   "title": "Neo4j 5 Query log dashboard",
   "uid": "nHgfgv6Zd",
-  "version": 3,
+  "version": 5,
   "weekStart": ""
 }
