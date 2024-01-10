@@ -1,0 +1,63 @@
+# docker compose -f cluster-compose.yml up
+# 
+# I tried this, but docker wont let me set the hostname :/
+# docker compose -f cluster-compose.yml up --scale neo4j=5
+version: "3.9"
+name: my-cluster
+services:
+  neo4j-server-1:
+    hostname: "neo4j-server-1"
+    build: 
+      context: .
+      dockerfile: Neo4j.dockerfile
+    ports: 
+      - "7401:7474"
+      - "7681:7687"
+    environment: 
+      - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
+      - NEO4J_AUTH=neo4j/test1234
+      - NEO4J_server_memory_heap_initial__size=2g
+      - NEO4J_server_memory_heap_max__size=2g
+      - NEO4J_dbms_cluster_discovery_endpoints=neo4j-server-1:5000,neo4j-server-2:5000,neo4j-server-3:5000
+      - NEO4J_server_default__listen__address=0.0.0.0
+      - NEO4J_initial_server_mode__constraint=PRIMARY
+      - NEO4J_server_http_advertised__address=localhost:7401
+      - NEO4J_server_bolt_advertised__address=localhost:7681
+      
+  neo4j-server-2:
+    hostname: "neo4j-server-2"
+    build: 
+      context: .
+      dockerfile: Neo4j.dockerfile
+    ports: 
+      - "7402:7474"
+      - "7682:7687"
+    environment: 
+      - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
+      - NEO4J_AUTH=neo4j/test1234
+      - NEO4J_server_memory_heap_initial__size=2g
+      - NEO4J_server_memory_heap_max__size=2g
+      - NEO4J_dbms_cluster_discovery_endpoints=neo4j-server-1:5000,neo4j-server-2:5000,neo4j-server-3:5000
+      - NEO4J_server_default__listen__address=0.0.0.0
+      - NEO4J_server_http_advertised__address=localhost:7402
+      - NEO4J_server_bolt_advertised__address=localhost:7682
+  neo4j-server-3:
+    hostname: "neo4j-server-3"
+    build: 
+      context: .
+      dockerfile: Neo4j.dockerfile
+    ports: 
+      - "7403:7474"
+      - "7683:7687"
+    environment: 
+      - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
+      - NEO4J_AUTH=neo4j/test1234
+      - NEO4J_server_memory_heap_initial__size=2g
+      - NEO4J_server_memory_heap_max__size=2g
+      - NEO4J_dbms_cluster_discovery_endpoints=neo4j-server-1:5000,neo4j-server-2:5000,neo4j-server-3:5000
+      - NEO4J_server_default__listen__address=0.0.0.0
+      - NEO4J_server_http_advertised__address=localhost:7403
+      - NEO4J_server_bolt_advertised__address=localhost:7683
+networks:
+  default:
+    name: neo4jnetwork
