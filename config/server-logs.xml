@@ -51,7 +51,7 @@
 
         <RollingRandomAccessFile name="SecurityLog" fileName="${config:server.directories.logs}/security.log"
                                  filePattern="$${config:server.directories.logs}/security.log.%02i">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSSZ}{GMT+0} %-5p %m%n"/>
+            <JsonTemplateLayout eventTemplateUri="classpath:org/neo4j/logging/StructuredJsonLayout.json"/>
             <Policies>
                 <SizeBasedTriggeringPolicy size="20 MB"/>
             </Policies>
