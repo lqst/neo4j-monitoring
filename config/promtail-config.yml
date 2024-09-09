@@ -49,3 +49,43 @@ scrape_configs:
         job: querylogs5
         type: querylog
         __path__: /var/log/neo4j5/query.log
+  - job_name: neo4j_security_log_1
+    static_configs:
+    - targets:
+        - loki
+      labels:
+        job: securitylogs1
+        type: securitylog
+        __path__: /var/log/neo4j1/security.log
+  - job_name: neo4j_security_log_2
+    static_configs:
+    - targets:
+        - loki
+      labels:
+        job: securitylogs2
+        type: securitylog
+        __path__: /var/log/neo4j2/security.log
+  - job_name: neo4j_security_log_3
+    static_configs:
+    - targets:
+        - loki
+      labels:
+        job: securitylogs3
+        type: securitylog
+        __path__: /var/log/neo4j3/security.log
+  - job_name: neo4j_security_log_4
+    static_configs:
+    - targets:
+        - loki
+      labels:
+        job: securitylogs4
+        type: securitylog
+        __path__: /var/log/neo4j4/security.log
+  - job_name: neo4j_security_log_5
+    static_configs:
+    - targets:
+        - loki
+      labels:
+        job: securitylogs5
+        type: securitylog
+        __path__: /var/log/neo4j5/security.log
