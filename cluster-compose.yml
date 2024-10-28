@@ -10,6 +10,8 @@ services:
     build: 
       context: .
       dockerfile: Neo4j.dockerfile
+    ports:
+      - "7777:7687"
     volumes:
       - logsvol1:/var/lib/neo4j/logs
     environment: 
@@ -23,6 +25,7 @@ services:
       - NEO4J_metrics_prometheus_endpoint=0.0.0.0:2004
       - NEO4J_dbms_logs_query_page__logging__enabled=true
       - NEO4J_metrics_filter=*bolt.connections*,*bolt.messages_received*,*bolt.messages_started*,*dbms.pool.bolt.free,*dbms.pool.bolt.total_size,*dbms.pool.bolt.total_used,*dbms.pool.bolt.used_heap,*cluster.core.is_leader,*cluster.core.last_leader_message,*cluster.core.replication_attempt,*cluster.core.replication_fail,*cluster.core.last_applied,*cluster.core.last_appended,*check_point.duration,*check_point.total_time,*cypher.replan_events,*ids_in_use*,*pool.transaction.*.total_used,*pool.transaction.*.used_heap,*pool.transaction.*.used_native,*store.size*,*transaction.active_read,*transaction.active_write,*transaction.committed*,*transaction.last_committed_tx_id,*transaction.peak_concurrent,*transaction.rollbacks*,*page_cache.hit*,*page_cache.page_faults,*page_cache.usage_ratio,*vm.file.descriptors.count,*vm.gc.time.*,*vm.heap.used,*vm.memory.buffer.direct.used,*vm.memory.pool.g1_eden_space,*vm.memory.pool.g1_old_gen,*vm.pause_time,*vm.thread*,*db.query.execution*,*.neo4j.count.relationship,*.neo4j.count.node,*.cypher.replan_wait_time
+      - NEO4J_dbms_routing_default__router=SERVER
   neo4j-server-2:
     hostname: "neo4j-server-2"
     build: 
@@ -41,6 +44,7 @@ services:
       - NEO4J_metrics_prometheus_endpoint=0.0.0.0:2004
       - NEO4J_dbms_logs_query_page__logging__enabled=true
       - NEO4J_metrics_filter=*bolt.connections*,*bolt.messages_received*,*bolt.messages_started*,*dbms.pool.bolt.free,*dbms.pool.bolt.total_size,*dbms.pool.bolt.total_used,*dbms.pool.bolt.used_heap,*cluster.core.is_leader,*cluster.core.last_leader_message,*cluster.core.replication_attempt,*cluster.core.replication_fail,*cluster.core.last_applied,*cluster.core.last_appended,*check_point.duration,*check_point.total_time,*cypher.replan_events,*ids_in_use*,*pool.transaction.*.total_used,*pool.transaction.*.used_heap,*pool.transaction.*.used_native,*store.size*,*transaction.active_read,*transaction.active_write,*transaction.committed*,*transaction.last_committed_tx_id,*transaction.peak_concurrent,*transaction.rolls*,*page_cache.hit*,*page_cache.page_faults,*page_cache.usage_ratio,*vm.file.descriptors.count,*vm.gc.time.*,*vm.heap.used,*vm.memory.buffer.direct.used,*vm.memory.pool.g1_eden_space,*vm.memory.pool.g1_old_gen,*vm.pause_time,*vm.thread*,*db.query.execution*,*.neo4j.count.relationship,*.neo4j.count.node,*.cypher.replan_wait_time
+      - NEO4J_dbms_routing_default__router=SERVER
   neo4j-server-3:
     hostname: "neo4j-server-3"
     build: 
@@ -59,6 +63,7 @@ services:
       - NEO4J_metrics_prometheus_endpoint=0.0.0.0:2004
       - NEO4J_dbms_logs_query_page__logging__enabled=true
       - NEO4J_metrics_filter=*bolt.connections*,*bolt.messages_received*,*bolt.messages_started*,*dbms.pool.bolt.free,*dbms.pool.bolt.total_size,*dbms.pool.bolt.total_used,*dbms.pool.bolt.used_heap,*cluster.core.is_leader,*cluster.core.last_leader_message,*cluster.core.replication_attempt,*cluster.core.replication_fail,*cluster.core.last_applied,*cluster.core.last_appended,*check_point.duration,*check_point.total_time,*cypher.replan_events,*ids_in_use*,*pool.transaction.*.total_used,*pool.transaction.*.used_heap,*pool.transaction.*.used_native,*store.size*,*transaction.active_read,*transaction.active_write,*transaction.committed*,*transaction.last_committed_tx_id,*transaction.peak_concurrent,*transaction.rollbacks*,*page_cache.hit*,*page_cache.page_faults,*page_cache.usage_ratio,*vm.file.descriptors.count,*vm.gc.time.*,*vm.heap.used,*vm.memory.buffer.direct.used,*vm.memory.pool.g1_eden_space,*vm.memory.pool.g1_old_gen,*vm.pause_time,*vm.thread*,*db.query.execution*,*.neo4j.count.relationship,*.neo4j.count.node,*.cypher.replan_wait_time
+      - NEO4J_dbms_routing_default__router=SERVER
   neo4j-server-4:
     hostname: "neo4j-server-4"
     build: 
@@ -77,6 +82,7 @@ services:
       - NEO4J_metrics_prometheus_endpoint=0.0.0.0:2004
       - NEO4J_dbms_logs_query_page__logging__enabled=true
       - NEO4J_metrics_filter=*bolt.connections*,*bolt.messages_received*,*bolt.messages_started*,*dbms.pool.bolt.free,*dbms.pool.bolt.total_size,*dbms.pool.bolt.total_used,*dbms.pool.bolt.used_heap,*cluster.core.is_leader,*cluster.core.last_leader_message,*cluster.core.replication_attempt,*cluster.core.replication_fail,*cluster.core.last_applied,*cluster.core.last_appended,*check_point.duration,*check_point.total_time,*cypher.replan_events,*ids_in_use*,*pool.transaction.*.total_used,*pool.transaction.*.used_heap,*pool.transaction.*.used_native,*store.size*,*transaction.active_read,*transaction.active_write,*transaction.committed*,*transaction.last_committed_tx_id,*transaction.peak_concurrent,*transaction.rollbacks*,*page_cache.hit*,*page_cache.page_faults,*page_cache.usage_ratio,*vm.file.descriptors.count,*vm.gc.time.*,*vm.heap.used,*vm.memory.buffer.direct.used,*vm.memory.pool.g1_eden_space,*vm.memory.pool.g1_old_gen,*vm.pause_time,*vm.thread*,*db.query.execution*,*.neo4j.count.relationship,*.neo4j.count.node,*.cypher.replan_wait_time
+      - NEO4J_dbms_routing_default__router=SERVER
   neo4j-server-5:
     hostname: "neo4j-server-5"
     build: 
@@ -95,6 +101,7 @@ services:
       - NEO4J_metrics_prometheus_endpoint=0.0.0.0:2004
       - NEO4J_dbms_logs_query_page__logging__enabled=true
       - NEO4J_metrics_filter=*bolt.connections*,*bolt.messages_received*,*bolt.messages_started*,*dbms.pool.bolt.free,*dbms.pool.bolt.total_size,*dbms.pool.bolt.total_used,*dbms.pool.bolt.used_heap,*cluster.core.is_leader,*cluster.core.last_leader_message,*cluster.core.replication_attempt,*cluster.core.replication_fail,*cluster.core.last_applied,*cluster.core.last_appended,*check_point.duration,*check_point.total_time,*cypher.replan_events,*ids_in_use*,*pool.transaction.*.total_used,*pool.transaction.*.used_heap,*pool.transaction.*.used_native,*store.size*,*transaction.active_read,*transaction.active_write,*transaction.committed*,*transaction.last_committed_tx_id,*transaction.peak_concurrent,*transaction.rollbacks*,*page_cache.hit*,*page_cache.page_faults,*page_cache.usage_ratio,*vm.file.descriptors.count,*vm.gc.time.*,*vm.heap.used,*vm.memory.buffer.direct.used,*vm.memory.pool.g1_eden_space,*vm.memory.pool.g1_old_gen,*vm.pause_time,*vm.thread*,*db.query.execution*,*.neo4j.count.relationship,*.neo4j.count.node,*.cypher.replan_wait_time
+      - NEO4J_dbms_routing_default__router=SERVER
       - NEO4J_initial_server_mode__constraint=SECONDARY
       - NEO4J_server_cluster_system__database__mode=SECONDARY
       - NEO4J_dbms_security_procedures_unrestricted=apoc.*,gds.*

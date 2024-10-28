@@ -1,0 +1,91 @@
+#helm install neo4j-test neo4j/neo4j --namespace neo4j -f server1.yaml
+#kubectl rollout status --watch --timeout=600s statefulset/neo4j-test
+#helm uninstall  neo4j-test
+neo4j:
+  name: neo4j-server-1
+  resources:
+    cpu: "0.5"
+    memory: "4Gi"
+  password: "test1234"
+  edition: "enterprise"
+  acceptLicenseAgreement: "yes"
+
+config:
+  server.memory.heap.initial_size: "2G"
+  server.memory.heap.max_size: "2G"
+  server.memory.pagecache.size: "1G"
+  server.metrics.prometheus.enabled: "true"
+  server.metrics.prometheus.endpoint: "0.0.0.0:2004"
+
+logging:
+  serverLogsXml: |-
+    <?xml version="1.0" encoding="UTF-8"?>
+    <Configuration status="ERROR" monitorInterval="30" packages="org.neo4j.logging.log4j">
+      <Appenders>
+          <!-- Default debug.log, please keep -->
+          <RollingRandomAccessFile name="DebugLog" fileName="${config:server.directories.logs}/debug.log"
+                                  filePattern="$${config:server.directories.logs}/debug.log.%02i">
+              <Neo4jDebugLogLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSSZ}{GMT+0} %-5p [%c{1.}] %m%n"/>
+              <Policies>
+                  <SizeBasedTriggeringPolicy size="20 MB"/>
+              </Policies>
+              <DefaultRolloverStrategy fileIndex="min" max="7"/>
+          </RollingRandomAccessFile>
+
+          <RollingRandomAccessFile name="HttpLog" fileName="${config:server.directories.logs}/http.log"
+                                  filePattern="$${config:server.directories.logs}/http.log.%02i">
+              <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSSZ}{GMT+0} %-5p %m%n"/>
+              <Policies>
+                  <SizeBasedTriggeringPolicy size="20 MB"/>
+              </Policies>
+              <DefaultRolloverStrategy fileIndex="min" max="5"/>
+          </RollingRandomAccessFile>
+          <RollingRandomAccessFile name="QueryLog" fileName="${config:server.directories.logs}/query.log"
+                                  filePattern="$${config:server.directories.logs}/query.log.%02i">
+              <!-- Using json logging -->
+              <JsonTemplateLayout eventTemplateUri="classpath:org/neo4j/logging/QueryLogJsonLayout.json"/>
+              <Policies>
+                  <SizeBasedTriggeringPolicy size="20 MB"/>
+              </Policies>
+              <DefaultRolloverStrategy fileIndex="min" max="7"/>
+          </RollingRandomAccessFile>
+          <RollingRandomAccessFile name="SecurityLog" fileName="${config:server.directories.logs}/security.log"
+                                  filePattern="$${config:server.directories.logs}/security.log.%02i">
+              <JsonTemplateLayout eventTemplateUri="classpath:org/neo4j/logging/StructuredJsonLayout.json"/>
+              <Policies>
+                  <SizeBasedTriggeringPolicy size="20 MB"/>
+              </Policies>
+              <DefaultRolloverStrategy fileIndex="min" max="7"/>
+          </RollingRandomAccessFile>
+      </Appenders>
+      <Loggers>
+          <Root level="INFO">
+              <AppenderRef ref="DebugLog"/> <!-- Keep this -->
+          </Root>
+          <Logger name="QueryLogger" level="INFO" additivity="false">
+              <AppenderRef ref="QueryLog"/>
+          </Logger>
+          <Logger name="HttpLogger" level="INFO" additivity="false">
+              <AppenderRef ref="HttpLog"/>
+          </Logger>
+          <Logger name="SecurityLogger" level="INFO" additivity="false">
+              <AppenderRef ref="SecurityLog"/>
+          </Logger>
+      </Loggers>
+    </Configuration>
+
+
+volumes:
+  data:
+    mode: defaultStorageClass
+    defaultStorageClass:
+      requests:
+        storage: 2Gi
+  logs:
+    mode: defaultStorageClass
+    defaultStorageClass:
+      requests:
+        storage: 1Gi
+      accessModes:
+          - ReadWriteOnce
+

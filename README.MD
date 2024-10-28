@@ -2,19 +2,14 @@
 Playground for Metrics (prometheus, grafana) and Logging (promtail, loki and grafana)
 
 
-# Setup
+# Docker Setup
 
 Modify prometheus.yml scrape config
 
-## Minikube tricks
+
 Create docker network (optional)
 ```shell
 docker network create neo4jnetwork
-```
-
-Mount the config folder to the minikube docker host
-```shell
-minikube mount config:/config
 ```
 
 ## Neo4j Conf
@@ -128,3 +123,52 @@ call gds.pageRank.write('g1', {writeProperty: 'pagerank'});
 
 ```
 
+# Kubernetes (rancher desktop)
+
+## Some setup
+```shell
+kubectl config set-context --current --namespace=neo4j
+docker build -f Neo4j.dockerfile -t neo4jcustom:v01 .
+```
+
+## Neo4j
+```shell
+# deploy server1.yaml with:
+helm install neo4j-test neo4j/neo4j --namespace neo4j -f server1.yaml
+```
+
+## Prometheus
+```shell
+kubectl create namespace monitoring
+kubectl config set-context --current --namespace=monitoring
+```
+
+Create config map and deployment for Prometheus
+```shell
+kubectl create -f prometheus-config-map.yaml
+kubectl create -f prometheus-deployment.yaml 
+kubectl create -f prometheus-service.yaml --namespace=monitoring
+```
+
+Port forward to access Prometheus
+Useful for debugging, service can also be accessed on http://localhost:30000/
+```shell
+port-forward prometheus...[check pod name] 8080:9090 -n monitoring
+```
+
+
+## Grafan
+Create config map and deployment for Grafana
+(still in monitoring namespace)
+
+```shell
+kubectl create -f grafana-config-map.yaml
+kubectl create -f grafana-deployment.yaml 
+kubectl create -f grafana-service.yaml --namespace=monitoring
+```
+
+```shell
+kubectl delete -f grafana-config-map.yaml
+kubectl delete -f grafana-deployment.yaml 
+kubectl delete -f grafana-service.yaml --namespace=monitoring
+```

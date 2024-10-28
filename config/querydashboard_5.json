@@ -1742,8 +1742,8 @@
       {
         "current": {
           "selected": false,
-          "text": "core2",
-          "value": "core2"
+          "text": "core4",
+          "value": "core4"
         },
         "datasource": {
           "type": "prometheus",
@@ -1812,6 +1812,6 @@
   "timezone": "",
   "title": "Neo4j 5 Query log dashboard",
   "uid": "nHgfgv6Zd",
-  "version": 3,
+  "version": 4,
   "weekStart": ""
 }
