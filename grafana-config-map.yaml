@@ -14,3 +14,9 @@ data:
         isDefault: true
         editable: true
         orgId: 1
+      - name: Loki
+        type: loki
+        access: proxy
+        url: http://loki-headless:3100
+        jsonData:
+          maxLines: 1000

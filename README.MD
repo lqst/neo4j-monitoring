@@ -150,14 +150,45 @@ kubectl create -f prometheus-deployment.yaml
 kubectl create -f prometheus-service.yaml --namespace=monitoring
 ```
 
+Clean up
+```shell
+kubectl delete -f prometheus-config-map.yaml
+kubectl delete -f prometheus-deployment.yaml 
+kubectl delete -f prometheus-service.yaml --namespace=monitoring
+```
+
 Port forward to access Prometheus
 Useful for debugging, service can also be accessed on http://localhost:30000/
 ```shell
 port-forward prometheus...[check pod name] 8080:9090 -n monitoring
 ```
 
+## Loki
+Use helm chart to deploy loki (promtail disabled)
 
-## Grafan
+```shell
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo update
+helm upgrade --install --values loki-values.yaml loki grafana/loki-stack -n monitoring
+```
+
+## Promtail
+For now, add to neo4j namespace so we can access log volumes
+```shell
+kubectl create -f promtail-config-map.yaml --namespace=neo4j
+kubectl create -f promtail-deployment.yaml --namespace=neo4j
+
+```
+
+Clean up
+```shell
+kubectl delete -f promtail-config-map.yaml --namespace=neo4j
+kubectl delete -f promtail-deployment.yaml --namespace=neo4j
+
+```
+
+
+## Grafana
 Create config map and deployment for Grafana
 (still in monitoring namespace)
 
@@ -167,6 +198,7 @@ kubectl create -f grafana-deployment.yaml
 kubectl create -f grafana-service.yaml --namespace=monitoring
 ```
 
+Clean up
 ```shell
 kubectl delete -f grafana-config-map.yaml
 kubectl delete -f grafana-deployment.yaml 

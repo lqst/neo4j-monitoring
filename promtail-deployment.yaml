@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: promtail-deployment
+  namespace: neo4j
+  labels:
+    app: promtail-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: promtail-server
+  template:
+    metadata:
+      labels:
+        app: promtail-server
+    spec:
+      containers:
+        - name: promtail
+          image: grafana/promtail
+          args:
+            - "--config.file=/etc/promtail/config/promtail.yaml"
+          ports:
+            - containerPort: 9080
+          resources:
+            requests:
+              cpu: 500m
+              memory: 500M
+            limits:
+              cpu: 1
+              memory: 1Gi
+          volumeMounts:
+            - name: promtail-config-volume
+              mountPath: /etc/promtail/config
+              readOnly: false
+            - name: server1-logs
+              mountPath: /var/log/neo4j1
+              readOnly: true
+      volumes:
+        - name: promtail-config-volume
+          configMap:
+            defaultMode: 420
+            name: promtail-config
+        - name: server1-logs
+          persistentVolumeClaim:
+            claimName: logs-neo4j-test-0
+            readOnly: true
+
