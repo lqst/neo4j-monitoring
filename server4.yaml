@@ -1,5 +1,5 @@
-#helm install server1 neo4j/neo4j --namespace neo4j -f server1.yaml
-#helm uninstall  server1
+#helm install server4 neo4j/neo4j --namespace neo4j -f server4.yaml
+#helm uninstall  server4
 neo4j:
   name: neo4j-cluster
   minimumClusterSize: 3
@@ -17,8 +17,7 @@ image:
 analytics:
   enabled: true
   type:
-    name: primary
-
+    name: secondary
 
 podSpec:
   podAntiAffinity: false
@@ -31,6 +30,9 @@ config:
   dbms.bloom.license_file: "/bloom.license"
   server.metrics.prometheus.enabled: "true"
   server.metrics.prometheus.endpoint: "0.0.0.0:2004"
+  initial.server.mode_constraint: "SECONDARY"
+  initial.server.tags: "gds,secondary"
+  gds.enterprise.license_file: "/gds.license"
 
 logging:
   serverLogsXml: |-

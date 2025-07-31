@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: promtail-config
+  name: promtail-config-server1
   namespace: neo4j
 data:
   promtail.yaml: |-
@@ -23,6 +23,6 @@ data:
           labels:
             job: querylogs1
             type: querylog
-            __path__: /var/log/neo4j1/logs/neo4j-test-0/query.log
+            __path__: /log/query.log
 
     

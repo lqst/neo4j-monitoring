@@ -116,7 +116,7 @@ create (:Element{name:"Service 1"})<-[:LINK]-(:Element{name:"LB"})-[:LINK]->(:El
 
 // connect with bolt to server 5: 
 // cypher-shell -a bolt://neo4j-server-5:7687 -d demo
-// cypher-shell -a neo4j://neo4j-server-5:7687?tags=gds -d demo
+// cypher-shell -a neo4j://neo4j-cluster:7687?tags=gds -d demo
 
 call gds.graph.project('g1','*','*');
 call gds.pageRank.write('g1', {writeProperty: 'pagerank'});
@@ -127,14 +127,39 @@ call gds.pageRank.write('g1', {writeProperty: 'pagerank'});
 
 ## Some setup
 ```shell
-kubectl config set-context --current --namespace=neo4j
+kubectl create namespace neo4j
+kubectl config set-context --current --namespace=neo4j --cluster rancher-desktop
+
+# Build docker image
 docker build -f Neo4j.dockerfile -t neo4jcustom:v01 .
 ```
 
 ## Neo4j
+### Deploy single instance
 ```shell
 # deploy server1.yaml with:
+kubectl create -f promtail-config-map-server1.yaml --namespace=neo4j
 helm install neo4j-test neo4j/neo4j --namespace neo4j -f server1.yaml
+```
+
+### Deploy cluster
+
+```shell
+helm install server1 neo4j/neo4j --namespace neo4j -f server1.yaml && \
+helm install server2 neo4j/neo4j --namespace neo4j -f server2.yaml && \
+helm install server3 neo4j/neo4j --namespace neo4j -f server3.yaml && \
+helm install server4 neo4j/neo4j --namespace neo4j -f server4.yaml 
+
+helm uninstall server1 && \
+helm uninstall server2 && \
+helm uninstall server3 && \
+helm uninstall server4 
+```
+
+Clean up
+```shell
+kubectl delete -f promtail-config-map-server1.yaml --namespace=neo4j
+helm uninstall neo4j-test  --namespace neo4j
 ```
 
 ## Prometheus
@@ -170,6 +195,12 @@ Use helm chart to deploy loki (promtail disabled)
 helm repo add grafana https://grafana.github.io/helm-charts
 helm repo update
 helm upgrade --install --values loki-values.yaml loki grafana/loki-stack -n monitoring
+```
+
+Clean up
+
+```shell
+helm uninstall loki -n monitoring
 ```
 
 ## Promtail
