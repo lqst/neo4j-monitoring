@@ -170,6 +170,8 @@ kubectl config set-context --current --namespace=monitoring
 
 Create config map and deployment for Prometheus
 ```shell
+kubectl create namespace monitoring
+
 kubectl create -f prometheus-config-map.yaml
 kubectl create -f prometheus-deployment.yaml 
 kubectl create -f prometheus-service.yaml --namespace=monitoring
@@ -202,6 +204,24 @@ Clean up
 ```shell
 helm uninstall loki -n monitoring
 ```
+
+## Alloy
+Used for collecting logs (todo: Also use for metrics?)
+```shell
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo update
+
+helm install alloy-logs grafana/alloy -n monitoring --values alloy.yaml
+```
+
+Clean up
+
+```shell
+helm uninstall alloy-logs -n monitoring
+```
+
+kubectl port-forward alloy-logs-zvjwj 12345:12345 -n monitoring
+
 
 ## Promtail
 For now, add to neo4j namespace so we can access log volumes
