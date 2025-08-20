@@ -1,7 +1,9 @@
 FROM neo4j:2025.06.2-enterprise
 
 ## For json logging
-COPY --chown=neo4j:neo4j ./config/server-logs.xml /var/lib/neo4j/conf/server-logs.xml
+#COPY --chown=neo4j:neo4j ./config/server-logs.xml /var/lib/neo4j/conf/server-logs.xml
+RUN mkdir -p /var/log/neo4j \
+ && chown neo4j:neo4j /var/log/neo4j
 
 ## Plugins
 RUN mv /var/lib/neo4j/labs/apoc*core.jar /var/lib/neo4j/plugins/apoc_core.jar \

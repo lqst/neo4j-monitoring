@@ -1,99 +1,64 @@
 alloy:
   mounts:
-    # -- Mount /var/log from the host into the container for log collection.
-    varlog: true
+    varlog: false
+    dockercontainers: false
+    extra: # Will be mounted as /var/log/server1/logs/server1-0
+      - name: server1
+        mountPath: /var/log/server1
+      - name: server2
+        mountPath: /var/log/server2
+      - name: server3
+        mountPath: /var/log/server3
+      - name: server4
+        mountPath: /var/log/server4
+  serviceMonitor:
+    enabled: true
+  configReloader:
+    enabled: false
+  securityContext:
+    privileged: true
+    runAsUser: 0
   configMap:
     content: |-
-      // local.file_match discovers files on the local filesystem using glob patterns and the doublestar library. It returns an array of file paths.
-      // discovery.kubernetes allows you to find scrape targets from Kubernetes resources.
-      // It watches cluster state and ensures targets are continually synced with what is currently running in your cluster.
-      discovery.kubernetes "pod" {
-        role = "pod"
+      
+      local.file_match "local_files" {
+          path_targets = [
+            {"__path__" = "/var/log/server*/logs/server*/debug.log", "job" = "neo4j", "hostname" = constants.hostname, "logtype" = "debuglog"},
+            {"__path__" = "/var/log/server*/logs/server*/query.log", "job" = "neo4j", "hostname" = constants.hostname, "logtype" = "querylog"},
+            {"__path__" = "/var/log/server*/logs/server*/security.log", "job" = "neo4j", "hostname" = constants.hostname, "logtype" = "securitylog"},
+            {"__path__" = "/var/log/server*/logs/server*/neo4j.log", "job" = "neo4j", "hostname" = constants.hostname, "logtype" = "neo4jlog"},
+          ]
+          sync_period  = "5s"
       }
 
-      // discovery.relabel rewrites the label set of the input targets by applying one or more relabeling rules.
-      // If no rules are defined, then the input targets are exported as-is.
-      discovery.relabel "pod_logs" {
-        targets = discovery.kubernetes.pod.targets
-
-        // Label creation - "namespace" field from "__meta_kubernetes_namespace"
-        rule {
-          source_labels = ["__meta_kubernetes_namespace"]
-          action = "replace"
-          target_label = "namespace"
-        }
-
-        // Label creation - "pod" field from "__meta_kubernetes_pod_name"
-        rule {
-          source_labels = ["__meta_kubernetes_pod_name"]
-          action = "replace"
-          target_label = "pod"
-        }
-
-        // Label creation - "container" field from "__meta_kubernetes_pod_container_name"
-        rule {
-          source_labels = ["__meta_kubernetes_pod_container_name"]
-          action = "replace"
-          target_label = "container"
-        }
-
-        // Label creation -  "app" field from "__meta_kubernetes_pod_label_app_kubernetes_io_name"
-        rule {
-          source_labels = ["__meta_kubernetes_pod_label_app_kubernetes_io_name"]
-          action = "replace"
-          target_label = "app"
-        }
-
-        // Label creation -  "job" field from "__meta_kubernetes_namespace" and "__meta_kubernetes_pod_container_name"
-        // Concatenate values __meta_kubernetes_namespace/__meta_kubernetes_pod_container_name
-        rule {
-          source_labels = ["__meta_kubernetes_namespace", "__meta_kubernetes_pod_container_name"]
-          action = "replace"
-          target_label = "job"
-          separator = "/"
-          replacement = "$1"
-        }
-
-        // Label creation - "container" field from "__meta_kubernetes_pod_uid" and "__meta_kubernetes_pod_container_name"
-        // Concatenate values __meta_kubernetes_pod_uid/__meta_kubernetes_pod_container_name.log
-        rule {
-          source_labels = ["__meta_kubernetes_pod_uid", "__meta_kubernetes_pod_container_name"]
-          action = "replace"
-          target_label = "__path__"
-          separator = "/"
-          replacement = "/var/log/pods/*$1/*.log"
-        }
-
-        // Label creation -  "container_runtime" field from "__meta_kubernetes_pod_container_id"
-        rule {
-          source_labels = ["__meta_kubernetes_pod_container_id"]
-          action = "replace"
-          target_label = "container_runtime"
-          regex = "^(\\S+):\\/\\/.+$"
-          replacement = "$1"
-        }
-      }
-
-      // loki.source.kubernetes tails logs from Kubernetes containers using the Kubernetes API.
-      loki.source.kubernetes "pod_logs" {
-        targets    = discovery.relabel.pod_logs.output
-        forward_to = [loki.process.pod_logs.receiver]
-      }
-
-      // loki.process receives log entries from other Loki components, applies one or more processing stages,
-      // and forwards the results to the list of receivers in the component's arguments.
-      loki.process "pod_logs" {
-        stage.static_labels {
-            values = {
-              cluster = "rancher-desktop",
-            }
-        }
-
-        forward_to = [loki.write.loki.receiver]
+      loki.source.file "log_scrape" {
+          targets    = local.file_match.local_files.targets
+          forward_to = [loki.write.loki.receiver]
+          tail_from_end = true
       }
 
       loki.write "loki" {
         endpoint {
-          url = "http://loki-headless:3100/loki/api/v1/push"
+          url = "http://loki-headless.monitoring.svc.cluster.local:3100/loki/api/v1/push"
         }
       }
+controller:
+  type: daemonset
+  volumes:
+    extra:
+      - name: server1
+        persistentVolumeClaim:
+          claimName: logs-server1-0
+          readOnly: true
+      - name: server2
+        persistentVolumeClaim:
+          claimName: logs-server2-0
+          readOnly: true
+      - name: server3
+        persistentVolumeClaim:
+          claimName: logs-server3-0
+          readOnly: true
+      - name: server4
+        persistentVolumeClaim:
+          claimName: logs-server4-0
+          readOnly: true

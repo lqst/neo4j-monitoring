@@ -11,11 +11,15 @@ data:
       - job_name: 'neo4j-prometheus'
         scrape_interval: 10s
         static_configs:
-        - targets: [
-          'server1-admin.neo4j.svc.cluster.local:2004',
-          'server2-admin.neo4j.svc.cluster.local:2004',
-          'server3-admin.neo4j.svc.cluster.local:2004',
-          'server4-admin.neo4j.svc.cluster.local:2004'
-        ]
+        - targets: ['server1-admin.neo4j.svc.cluster.local:2004']
           labels:
             instance: 'core1'
+        - targets: ['server2-admin.neo4j.svc.cluster.local:2004']
+          labels:
+            instance: 'core2'
+        - targets: ['server3-admin.neo4j.svc.cluster.local:2004']
+          labels:
+            instance: 'core3'
+        - targets: ['server4-admin.neo4j.svc.cluster.local:2004']
+          labels:
+            instance: 'core4'

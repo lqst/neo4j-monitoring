@@ -132,6 +132,8 @@ kubectl config set-context --current --namespace=neo4j --cluster rancher-desktop
 
 # Build docker image
 docker build -f Neo4j.dockerfile -t neo4jcustom:v01 .
+docker build -f Alloy.dockerfile -t alloycustom:v01 .
+
 ```
 
 ## Neo4j
@@ -150,10 +152,10 @@ helm install server2 neo4j/neo4j --namespace neo4j -f server2.yaml && \
 helm install server3 neo4j/neo4j --namespace neo4j -f server3.yaml && \
 helm install server4 neo4j/neo4j --namespace neo4j -f server4.yaml 
 
-helm uninstall server1 && \
-helm uninstall server2 && \
-helm uninstall server3 && \
-helm uninstall server4 
+helm uninstall server1 --namespace neo4j && \
+helm uninstall server2 --namespace neo4j && \
+helm uninstall server3 --namespace neo4j && \
+helm uninstall server4 --namespace neo4j
 ```
 
 Clean up
@@ -211,19 +213,21 @@ Used for collecting logs (todo: Also use for metrics?)
 helm repo add grafana https://grafana.github.io/helm-charts
 helm repo update
 
-helm install alloy-logs grafana/alloy -n monitoring --values alloy.yaml
+helm install alloy-logs grafana/alloy -n neo4j --values alloy.yaml
+
+kubectl port-forward alloy-logs-xxzvz 12345:12345
 ```
 
 Clean up
 
 ```shell
-helm uninstall alloy-logs -n monitoring
+helm uninstall alloy-logs -n neo4j
 ```
 
 kubectl port-forward alloy-logs-zvjwj 12345:12345 -n monitoring
 
 
-## Promtail
+## Promtail (Depricated - Use Alloy instead)
 For now, add to neo4j namespace so we can access log volumes
 ```shell
 kubectl create -f promtail-config-map.yaml --namespace=neo4j

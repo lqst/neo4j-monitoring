@@ -30,6 +30,8 @@ config:
   dbms.bloom.license_file: "/bloom.license"
   server.metrics.prometheus.enabled: "true"
   server.metrics.prometheus.endpoint: "0.0.0.0:2004"
+
+  # For GDS secondary server
   initial.server.mode_constraint: "SECONDARY"
   initial.server.tags: "gds,secondary"
   gds.enterprise.license_file: "/gds.license"
@@ -37,16 +39,33 @@ config:
 logging:
   serverLogsXml: |-
     <?xml version="1.0" encoding="UTF-8"?>
-    <!-- Example JSON logging configuration -->
+    <!--
+
+        Copyright (c) "Neo4j"
+        Neo4j Sweden AB [https://neo4j.com]
+        This file is a commercial add-on to Neo4j Enterprise Edition.
+
+    -->
+    <!--
+        This is a log4j 2 configuration file.
+
+        Please keep the original "debug.log" as is, to make sure enough data is captured in of case errors
+        in a format that neo4j support engineers and developers can work with. Changing the "debug.log" format
+        can interfere with neo4j's ability to offer customer support and invalidate your support warranty.
+
+        If you require the "debug.log" messages in a different format you can copy the Appender and change the
+        filename. See Neo4j documentation.
+
+        All configuration values can be queried with the lookup prefix "config:". You can for example, resolve
+        the path to your neo4j home directory with ${config:dbms.directories.neo4j_home}.
+
+        Please consult https://logging.apache.org/log4j/2.x/manual/configuration.html for instructions and
+        available configuration options.
+    -->
     <Configuration status="ERROR" monitorInterval="30" packages="org.neo4j.logging.log4j">
         <Appenders>
-        	<Console name="console" target="SYSTEM_OUT">
-            	<PatternLayout pattern="%m%n"/>
-        	</Console>
-
-            <!-- Default debug.log, please keep -->
             <RollingRandomAccessFile name="DebugLog" fileName="${config:server.directories.logs}/debug.log"
-                                     filePattern="$${config:server.directories.logs}/debug.log.%02i">
+                                    filePattern="$${config:server.directories.logs}/debug.log.%02i">
                 <JsonTemplateLayout eventTemplateUri="classpath:org/neo4j/logging/StructuredLayoutWithMessage.json"/>
                 <Policies>
                     <SizeBasedTriggeringPolicy size="20 MB"/>
@@ -55,8 +74,8 @@ logging:
             </RollingRandomAccessFile>
 
             <RollingRandomAccessFile name="HttpLog" fileName="${config:server.directories.logs}/http.log"
-                                     filePattern="$${config:server.directories.logs}/http.log.%02i">
-                <JsonTemplateLayout eventTemplateUri="classpath:org/neo4j/logging/StructuredLayoutWithMessage.json"/>
+                                    filePattern="$${config:server.directories.logs}/http.log.%02i">
+                <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSSZ}{GMT+0} %-5p %m%n"/>
                 <Policies>
                     <SizeBasedTriggeringPolicy size="20 MB"/>
                 </Policies>
@@ -64,7 +83,7 @@ logging:
             </RollingRandomAccessFile>
 
             <RollingRandomAccessFile name="QueryLog" fileName="${config:server.directories.logs}/query.log"
-                                     filePattern="$${config:server.directories.logs}/query.log.%02i">
+                                    filePattern="$${config:server.directories.logs}/query.log.%02i">
                 <JsonTemplateLayout eventTemplateUri="classpath:org/neo4j/logging/QueryLogJsonLayout.json"/>
                 <Policies>
                     <SizeBasedTriggeringPolicy size="20 MB"/>
@@ -73,8 +92,8 @@ logging:
             </RollingRandomAccessFile>
 
             <RollingRandomAccessFile name="SecurityLog" fileName="${config:server.directories.logs}/security.log"
-                                     filePattern="$${config:server.directories.logs}/security.log.%02i">
-                <JsonTemplateLayout eventTemplateUri="classpath:org/neo4j/logging/StructuredLayoutWithMessage.json"/>
+                                    filePattern="$${config:server.directories.logs}/security.log.%02i">
+                <JsonTemplateLayout eventTemplateUri="classpath:org/neo4j/logging/StructuredJsonLayout.json"/>
                 <Policies>
                     <SizeBasedTriggeringPolicy size="20 MB"/>
                 </Policies>
@@ -83,27 +102,17 @@ logging:
         </Appenders>
 
         <Loggers>
-            <!-- Log levels. One of DEBUG, INFO, WARN, ERROR or OFF -->
-
-            <!-- The debug log is used as the root logger to catch everything -->
             <Root level="INFO">
                 <AppenderRef ref="DebugLog"/> <!-- Keep this -->
-                <AppenderRef ref="console"/>
             </Root>
-            <!-- The query log, must be named "QueryLogger" -->
             <Logger name="QueryLogger" level="INFO" additivity="false">
                 <AppenderRef ref="QueryLog"/>
-                <AppenderRef ref="console"/>
             </Logger>
-            <!-- The http request log, must be named "HttpLogger" -->
             <Logger name="HttpLogger" level="INFO" additivity="false">
                 <AppenderRef ref="HttpLog"/>
-                <AppenderRef ref="console"/>
             </Logger>
-            <!-- The security log, must be named "SecurityLogger" -->
             <Logger name="SecurityLogger" level="INFO" additivity="false">
                 <AppenderRef ref="SecurityLog"/>
-                <AppenderRef ref="console"/>
             </Logger>
         </Loggers>
     </Configuration>
@@ -122,4 +131,3 @@ volumes:
         storage: 1Gi
       accessModes:
           - ReadWriteOnce
-
